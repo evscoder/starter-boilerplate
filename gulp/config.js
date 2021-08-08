@@ -112,11 +112,16 @@ const watchPath = {
         ],
         vendor: `${scriptsPath.src}/**/*.js`
     },
+    images: `${imagesPath.src}/**/*.*`,
     sprite: `${imagesPath.src}/content/icons/**/*.png`,
     svg: `${imagesPath.src}/icons/**/*.svg`,
-    assets: `${sourceFolder}/assets/**/*.*`,
+    assets: [`${sourceFolder}/assets/**/*.*`],
     files: `${sourceFolder}/assets/misc/**/*`
 };
+
+if (argvMode.OPTIMIZE_IMAGES) {
+    watchPath.assets.push(`!${imagesPath.src}/**/*.*`);
+}
 
 export {
     template,

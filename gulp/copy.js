@@ -1,7 +1,15 @@
 import { src, dest, parallel } from 'gulp';
 import * as config from './config';
 import { $ } from './helper';
-const { EMAILS_BUILD } = config.argvMode;
+const { EMAILS_BUILD, OPTIMIZE_IMAGES } = config.argvMode;
+const assetsSrc = [
+    `${config.sourceFolder}/assets/**/*`,
+    `!${config.sourceFolder}/assets/misc/**`
+];
+
+if (OPTIMIZE_IMAGES) {
+    assetsSrc.push(`!${config.imagesPath.src}/**`);
+}
 
 export default class Copy {
     static tasks = () => parallel(
@@ -35,10 +43,7 @@ export default class Copy {
     }
 
     static assetsCopy() {
-        return src([
-            `${config.sourceFolder}/assets/**/*`,
-            `!${config.sourceFolder}/assets/misc/**`
-        ])
+        return src(assetsSrc)
             .pipe($.newer(config.assets))
             .pipe($.debug({ title: 'assets' }))
             .pipe(dest(config.assets));

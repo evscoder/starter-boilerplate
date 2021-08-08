@@ -7,7 +7,11 @@ import Styles from './css-compile';
 import Scripts from './js-compile';
 import * as Images from './images/images';
 import Copy from './copy';
-const { SERVER_INDEX_PAGE, PNG_SPRITE } = config.argvMode;
+const {
+    SERVER_INDEX_PAGE,
+    OPTIMIZE_IMAGES,
+    PNG_SPRITE
+} = config.argvMode;
 const { developer, watchPath } = config;
 
 const deleteEventFile = (filePath, resolve, src = config.sourceFolder) => {
@@ -56,6 +60,11 @@ const serveWatch = () => {
 
     watch(watchPath.files, series(Copy.filesCopy, reload))
         .on('unlink', event => deleteEventFile(event, config.developer, `${config.sourceFolder}/assets/misc`));
+
+    if (OPTIMIZE_IMAGES) {
+        watch(watchPath.images, series(Images.imagesOptimize, reload))
+            .on('unlink', event => deleteEventFile(event, config.developer));
+    }
 
     if (PNG_SPRITE) {
         watch(watchPath.sprite, series(Images.pngSprite, reload));

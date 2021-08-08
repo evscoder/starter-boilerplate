@@ -5,7 +5,7 @@ const { OPTIMIZE_IMAGES, PNG_OPTIMIZE } = config.argvMode;
 
 const imagesOptimize = done => {
     if (OPTIMIZE_IMAGES) {
-        src(`${config.imagesPath.src}/**/*.*`)
+        return src(`${config.imagesPath.src}/**/*.*`)
             .pipe($.newer(config.imagesPath.dist))
             .pipe($.debug({ title: 'images' }))
             .pipe($.imagemin([

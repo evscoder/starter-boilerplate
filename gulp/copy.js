@@ -2,12 +2,13 @@ import { src, dest, parallel } from 'gulp';
 import * as config from './config';
 import { $ } from './helper';
 const { EMAILS_BUILD, OPTIMIZE_IMAGES } = config.argvMode;
+const { production } = config.argvMode.env;
 const assetsSrc = [
     `${config.sourceFolder}/assets/**/*`,
     `!${config.sourceFolder}/assets/misc/**`
 ];
 
-if (OPTIMIZE_IMAGES) {
+if (OPTIMIZE_IMAGES && production) {
     assetsSrc.push(`!${config.imagesPath.src}/**`);
 }
 

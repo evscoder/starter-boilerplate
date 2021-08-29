@@ -1,5 +1,6 @@
 - const PATH = pathPrefix;
 - const lang = 'ru';
+- const blocks = {}
 
 mixin placeholderPath(path=PATH)
     -
@@ -8,5 +9,8 @@ mixin placeholderPath(path=PATH)
             js: `${path}assets/js`,
             img: `${path}assets/img/content`,
         }
+
+mixin set(key)
+    - blocks[key] = this.block
 
 +placeholderPath()

@@ -47,7 +47,7 @@ export default class HTMLPreproc {
 
     static emailsCompile(cb) {
         if (EMAILS_BUILD) {
-            src(config.email.filesSrc)
+            return src(config.email.filesSrc)
                 .pipe($.plumber(notifyErr()))
                 .pipe($.nunjucksRender({
                     path: config.email.src

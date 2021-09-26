@@ -7,9 +7,14 @@ const triggerEvent = (typeEvent, elem, bubbles = true) => {
             cancelable: true,
             view: window
         });
-
-        elem.dispatchEvent(event);
+    } else {
+        event = new Event(typeEvent, {
+            bubbles,
+            cancelable: true
+        });
     }
+
+    elem.dispatchEvent(event);
 };
 
 export default triggerEvent;

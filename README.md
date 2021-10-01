@@ -6,8 +6,8 @@
 Modular builder for frontend development based on Gulp and Webpack including modern tools:
 - Template Engine Pug or Nunjucks.
 - Preprocessor Scss.
-- System build gulp and webpack.
-- Support ES6 and next syntax Javascript.
+- System build Gulp and Webpack.
+- Support ES6 and Next syntax JavaScript.
 - Eslint.
 - SVG sprites.
 - Images png sprites and support retina.

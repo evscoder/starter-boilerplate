@@ -3,7 +3,15 @@
 </p>
 
 # Starter Boilerplate
-Modular builder for frontend development based on Gulp and Webpack including modern tools.
+Modular builder for frontend development based on Gulp and Webpack including modern tools:
+- Template Engine Pug or Nunjucks.
+- Preprocessor Scss.
+- System build gulp and webpack.
+- Support ES6 and next syntax Javascript.
+- Eslint.
+- SVG sprites.
+- Images png sprites and support retina.
+- Template Engine MJML.
 
 ## Requirements
 * Node >= 10.0.0

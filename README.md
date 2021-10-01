@@ -3,7 +3,7 @@
 </p>
 
 # Starter Boilerplate
-Boilerplate for markup projects frontend with Pug, Nunjucks, Sass, Svg sprites, ES6, Eslint.
+Boilerplate for markup projects frontend with Pug, Nunjucks, Sass, Svg sprites, ES6, Eslint. Integrated mjml build.
 
 ## Requirements
 * Node >= 10.0.0

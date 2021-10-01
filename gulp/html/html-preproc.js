@@ -49,12 +49,7 @@ export default class HTMLPreproc {
         if (EMAILS_BUILD) {
             return src(config.email.filesSrc)
                 .pipe($.plumber(notifyErr()))
-                .pipe($.nunjucksRender({
-                    path: config.email.src
-                }))
-                .pipe($.inlineCss({
-                    preserveMediaQueries: true
-                }))
+                .pipe($.mjml())
                 .pipe($.htmlPrettify(prettify))
                 .pipe(dest(config.email.dist));
         }

@@ -2,7 +2,7 @@ const env = {
     'PROJECT_NAME': 'awesome_project',
     'PROJECT_VERSION': 'v1.0',
     'BACKUP': false,
-    'EMAILS_BUILD': false,
+    'EMAILS_BUILD': true,
     'FOLDER_BUILD': 'build',
     'SERVER_INDEX_PAGE': 'index.html',
     'OPTIMIZE_IMAGES': true,

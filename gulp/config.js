@@ -60,7 +60,7 @@ const template = {
 
 const email = {
     src: `${sourceFolder}/emails`,
-    filesSrc: `${sourceFolder}/emails/[^_]*.html`,
+    filesSrc: `${sourceFolder}/emails/[^_]*.mjml`,
     dist: `${assets}/emails/`
 };
 
@@ -103,7 +103,7 @@ const watchPath = {
         `${sourceFolder}/components/**/*.json`,
         `!${sourceFolder}/components/**/${templateDataFileName}`
     ],
-    email: `${sourceFolder}/emails/*.html`,
+    email: `${sourceFolder}/emails/**/*.mjml`,
     css: `${sourceFolder}/{styles,components}/**/*.scss`,
     js: {
         src: [

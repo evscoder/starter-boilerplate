@@ -8,6 +8,7 @@ Modular builder for frontend development based on Gulp and Webpack including mod
 - Preprocessor Scss.
 - System build Gulp and Webpack.
 - Support ES6 and Next syntax JavaScript.
+- Babel.
 - Eslint.
 - SVG sprites.
 - Images png sprites and support retina.

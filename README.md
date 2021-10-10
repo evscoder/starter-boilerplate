@@ -16,8 +16,8 @@ Modular builder for frontend development based on Gulp and Webpack including mod
 - Template Engine MJML.
 
 ## Requirements
-* Node >= 10.0.0
-* Gulp cli >= 2.0.1
+* Node >= 12.0.0
+* Gulp cli >= 2.3.0
 
 ## Guide
 #### Install dependencies

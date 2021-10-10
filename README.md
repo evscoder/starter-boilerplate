@@ -5,7 +5,7 @@
 ---
 **NOTE**
 
-This version updated supports the ESM packages, if you don't need ESM packages support then <a href="https://github.com/evsgodev/starter-boilerplate/tree/v1">use this version</a> .
+This version updated supports the ESM packages. If you don't need ESM packages support then <a href="https://github.com/evsgodev/starter-boilerplate/tree/v1">use this version</a> .
 
 ---
 

@@ -1,7 +1,7 @@
 import through2 from 'through2';
 import path from 'path';
 import Buffer from 'buffer';
-import * as config from '../../config';
+import * as config from '../../config.js';
 
 const bufferObj = Buffer.Buffer;
 const { templateLocals } = config.argvMode;

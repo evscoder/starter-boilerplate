@@ -1,5 +1,5 @@
 import plugins from 'gulp-load-plugins';
-import { loadPlugins } from './config';
+import { loadPlugins } from './config.js';
 
 const $ = plugins(loadPlugins);
 const browser = $.browserSync.create();

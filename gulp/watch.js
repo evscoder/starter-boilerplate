@@ -1,12 +1,13 @@
-import { watch, series } from 'gulp';
+import gulp from 'gulp';
 import path from 'path';
-import * as config from './config';
-import { $, browser, reload } from './helper';
-import HTML from './html/html';
-import Styles from './css-compile';
-import Scripts from './js-compile';
-import * as Images from './images/images';
-import Copy from './copy';
+import * as config from './config.js';
+import { $, browser, reload } from './helper.js';
+import HTML from './html/html.js';
+import Styles from './css-compile.js';
+import Scripts from './js-compile.js';
+import * as Images from './images/images.js';
+import Copy from './copy.js';
+const { watch, series } = gulp;
 const { SERVER_INDEX_PAGE, PNG_SPRITE } = config.argvMode;
 const { developer, watchPath } = config;
 

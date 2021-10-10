@@ -1,9 +1,10 @@
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
 import fs from 'fs';
-import * as config from '../config';
-import { $, browser, notifyErr } from '../helper';
-import generateStaticPath from './helpers/generate-static-path';
-import Data from './data';
+import * as config from '../config.js';
+import { $, browser, notifyErr } from '../helper.js';
+import generateStaticPath from './helpers/generate-static-path.js';
+import Data from './data.js';
+const { src, dest } = gulp;
 const {
     EMAILS_BUILD,
     templatePreproc,

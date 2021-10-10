@@ -1,7 +1,8 @@
-import { parallel, series } from 'gulp';
-import { reload } from '../helper';
-import Data from './data';
-import HTMLPreproc from './html-preproc';
+import gulp from 'gulp';
+import { reload } from '../helper.js';
+import Data from './data.js';
+import HTMLPreproc from './html-preproc.js';
+const { parallel, series } = gulp;
 
 export default class HTML {
     static tasks() {

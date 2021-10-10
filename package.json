@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "name": "starter-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
+  "exports": "./index.js",
   "scripts": {
     "start": "gulp",
     "build": "cross-env NODE_ENV=production gulp build"

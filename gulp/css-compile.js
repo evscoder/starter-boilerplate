@@ -1,11 +1,12 @@
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
 import {
     argvMode,
     styleFileName,
     imageFolderName,
     styles
-} from './config';
-import { $, browser, notifyErr } from './helper';
+} from './config.js';
+import { $, browser, notifyErr } from './helper.js';
+const { src, dest } = gulp;
 const { production } = argvMode.env;
 let { minifyCss } = argvMode;
 const { pathPrefix } = argvMode.styles;

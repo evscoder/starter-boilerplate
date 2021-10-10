@@ -1,7 +1,8 @@
-import { src, dest } from 'gulp';
-import { webpackConfig } from '../webpack.config';
-import * as config from './config';
-import { $, notifyErr } from './helper';
+import gulp from 'gulp';
+import { webpackConfig } from '../webpack.config.js';
+import * as config from './config.js';
+import { $, notifyErr } from './helper.js';
+const { src, dest } = gulp;
 const { entry } = config.webpackPath;
 
 export default class Scripts {

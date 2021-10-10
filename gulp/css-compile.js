@@ -1,11 +1,15 @@
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
+import gulpSass from 'gulp-sass';
+import nodeSass from 'node-sass';
 import {
     argvMode,
     styleFileName,
     imageFolderName,
     styles
-} from './config';
-import { $, browser, notifyErr } from './helper';
+} from './config.js';
+import { $, browser, notifyErr } from './helper.js';
+const { src, dest } = gulp;
+const preprocSass = gulpSass(nodeSass);
 const { production } = argvMode.env;
 let { minifyCss } = argvMode;
 const { pathPrefix } = argvMode.styles;
@@ -26,7 +30,7 @@ export default class Styles {
                 $.if(!minifyCss, $.sourcemaps.init())
             ))
             .pipe($.importify(`${styleFileName}.scss`))
-            .pipe($.sass({
+            .pipe(preprocSass({
                 outputStyle: 'expanded'
             }).on('error', () => {
                 return browser.notify('<strong>FAIL</strong> Sass');

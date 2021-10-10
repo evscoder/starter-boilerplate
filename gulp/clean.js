@@ -1,5 +1,5 @@
-import { developer, production } from './config';
-import { $ } from './helper';
+import { developer, production } from './config.js';
+import { $ } from './helper.js';
 
 export default class Clean {
     static cleanDev() {

@@ -32,4 +32,4 @@ const env = {
     htmlMinify: false
 };
 
-export { env };
+export default env;

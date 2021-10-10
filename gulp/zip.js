@@ -1,6 +1,7 @@
-import { src, dest } from 'gulp';
-import * as config from './config';
-import { $ } from './helper';
+import gulp from 'gulp';
+import * as config from './config.js';
+import { $ } from './helper.js';
+const { src, dest } = gulp;
 const { PROJECT_NAME, PROJECT_VERSION, BACKUP } = config.argvMode;
 
 const zip = done => {

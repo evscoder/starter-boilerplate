@@ -1,6 +1,7 @@
-import { src, dest, parallel } from 'gulp';
-import * as config from './config';
-import { $ } from './helper';
+import gulp from 'gulp';
+import * as config from './config.js';
+import { $ } from './helper.js';
+const { src, dest, parallel } = gulp;
 const { EMAILS_BUILD, OPTIMIZE_IMAGES } = config.argvMode;
 const { production } = config.argvMode.env;
 const assetsSrc = [

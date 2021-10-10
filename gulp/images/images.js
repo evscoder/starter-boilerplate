@@ -1,7 +1,8 @@
-import { parallel, series } from 'gulp';
-import imagesOptimize from './compression';
-import pngSprite from './png';
-import svgSprite from './svg';
+import gulp from 'gulp';
+import imagesOptimize from './compression.js';
+import pngSprite from './png.js';
+import svgSprite from './svg.js';
+const { parallel, series } = gulp;
 
 export default class IMAGES {
     static tasks = () => series(

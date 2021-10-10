@@ -1,7 +1,8 @@
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
 import fs from 'fs';
-import * as config from '../config';
-import { $ } from '../helper';
+import * as config from '../config.js';
+import { $ } from '../helper.js';
+const { src, dest } = gulp;
 const { dataFileName, dataFiles, distComponents } = config.template;
 
 export default class Data {

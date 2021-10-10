@@ -1,6 +1,6 @@
-import plugins from 'gulp-load-plugins';
-import { loadPlugins } from './config';
-
+import { createRequire } from 'module';
+import { loadPlugins } from './config.js';
+const plugins = createRequire(import.meta.url)('gulp-load-plugins');
 const $ = plugins(loadPlugins);
 const browser = $.browserSync.create();
 

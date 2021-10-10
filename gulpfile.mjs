@@ -1,12 +1,13 @@
-import { task, series, parallel } from 'gulp';
-import HTML from './gulp/html/html';
-import Styles from './gulp/css-compile';
-import Scripts from './gulp/js-compile';
-import IMAGES from './gulp/images/images';
-import Copy from './gulp/copy';
-import serveWatch from './gulp/watch';
-import Clean from './gulp/clean';
-import zip from './gulp/zip';
+import gulp from 'gulp';
+import HTML from './gulp/html/html.js';
+import Styles from './gulp/css-compile.js';
+import Scripts from './gulp/js-compile.js';
+import IMAGES from './gulp/images/images.js';
+import Copy from './gulp/copy.js';
+import serveWatch from './gulp/watch.js';
+import Clean from './gulp/clean.js';
+import zip from './gulp/zip.js';
+const { task, series, parallel } = gulp;
 
 task('default', series(
     Clean.cleanDev,

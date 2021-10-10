@@ -1,4 +1,4 @@
-import { env } from '../user.config';
+import env from '../user.config.js';
 
 export const argvMode = Object.assign({}, env, {
     env: {

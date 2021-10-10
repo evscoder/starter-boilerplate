@@ -10,11 +10,7 @@ This version updated supports the ESM packages. If you don't need ESM packages s
 ---
 
 # Starter Boilerplate
-<<<<<<< HEAD
-Modular builder for frontend development based on Gulp and Webpack including modern tools:
-=======
 Modular builder for frontend development based on Gulp and Webpack including tools:
->>>>>>> 13cb6fe14967b382538b463b9daa842d7edd052d
 - Template Engine Pug, Nunjucks, MJML.
 - Preprocessor Scss.
 - System build Gulp and Webpack.

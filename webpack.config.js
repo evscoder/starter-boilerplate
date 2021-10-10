@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import { argvMode, webpackPath } from './gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
@@ -31,28 +32,13 @@ const webpackConfig = {
                     path.resolve(dirname, './src/components/'),
                     path.resolve(dirname, './src/styles/')
                 ],
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                url: false,
-                                minimize: true,
-                                sourceMap: false
-                            }
-                        }
-                    ]
-                })
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename(getPath) {
-                return getPath('../css/[name].css');
-            },
-            allChunks: true
+        new MiniCssExtractPlugin({
+            filename: '../css/[name].css'
         })
     ],
     optimization: {
@@ -65,7 +51,12 @@ const webpackConfig = {
                     enforce: true
                 }
             }
-        }
+        },
+        minimize: production,
+        minimizer: production ? [
+            '...',
+            new CssMinimizerPlugin()
+        ] : []
     },
     output: {
         path: path.resolve(dirname, webpackPath.output),
@@ -73,9 +64,7 @@ const webpackConfig = {
         filename: '[name].js'
     },
     resolve: {
-        alias: {
-            jquery: 'jquery/src/jquery'
-        }
+        alias: {}
     }
 };
 

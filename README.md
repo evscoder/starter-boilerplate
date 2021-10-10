@@ -2,14 +2,7 @@
 <a href="rules/en.md">General rules and Documentation</a> / <a href="rules/ru.md">Общие правила и документация</a>
 </p>
 
----
-**NOTE**
-
-This version updated supports the ESM packages. If you don't need ESM packages support then <a href="https://github.com/evsgodev/starter-boilerplate/tree/v1">use this version</a> .
-
----
-
-# Starter Boilerplate
+# Starter Boilerplate 2
 Modular builder for frontend development based on Gulp 4 and Webpack 5 including tools:
 - Template Engine Pug, Nunjucks, MJML.
 - Preprocessor Sass (Scss).

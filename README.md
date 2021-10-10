@@ -2,6 +2,13 @@
 <a href="rules/en.md">General rules and Documentation</a> / <a href="rules/ru.md">Общие правила и документация</a>
 </p>
 
+---
+**NOTE**
+
+This version updated supports the ESM packages. If you don't need ESM packages support then <a href="https://github.com/evsgodev/starter-boilerplate/tree/v1">use this version</a> .
+
+---
+
 # Starter Boilerplate
 <<<<<<< HEAD
 Modular builder for frontend development based on Gulp and Webpack including modern tools:
@@ -19,8 +26,8 @@ Modular builder for frontend development based on Gulp and Webpack including too
 - Images png sprites and support retina.
 
 ## Requirements
-* Node >= 10.0.0
-* Gulp cli >= 2.0.1
+* Node >= 12.0.0
+* Gulp cli >= 2.3.0
 
 ## Guide
 #### Install dependencies

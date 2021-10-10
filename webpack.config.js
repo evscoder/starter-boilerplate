@@ -1,6 +1,8 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { argvMode, webpackPath } from './gulp/config.js';
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
 const devTool = production ? false : 'source-map';
 
@@ -26,8 +28,8 @@ const webpackConfig = {
             }, {
                 test: /\.css$/,
                 exclude: [
-                    path.resolve(__dirname, './src/components/'),
-                    path.resolve(__dirname, './src/styles/')
+                    path.resolve(dirname, './src/components/'),
+                    path.resolve(dirname, './src/styles/')
                 ],
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -66,7 +68,7 @@ const webpackConfig = {
         }
     },
     output: {
-        path: path.resolve(__dirname, webpackPath.output),
+        path: path.resolve(dirname, webpackPath.output),
         publicPath: webpackPath.output,
         filename: '[name].js'
     },

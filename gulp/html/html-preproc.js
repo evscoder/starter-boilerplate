@@ -1,3 +1,4 @@
+import { createRequire } from 'module';
 import gulp from 'gulp';
 import fs from 'fs';
 import * as config from '../config.js';
@@ -13,7 +14,7 @@ const {
     htmlMinify
 } = config.argvMode;
 const { production } = config.argvMode.env;
-const emitty = require('emitty').setup(config.sourceFolder, templatePreproc);
+const emitty = createRequire(import.meta.url)('emitty').setup(config.sourceFolder, templatePreproc);
 const patterns = [];
 let { templateCache } = config.argvMode;
 

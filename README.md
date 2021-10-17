@@ -16,7 +16,7 @@ Modular builder for frontend development based on Gulp 4 and Webpack 5 including
 
 ## Requirements
 * Node >= 12.20.0 or latest version
-* Gulp cli >= 2.3.0 or latest version
+* Gulp cli >= 2.3.0
 
 ## Guide
 #### Install dependencies

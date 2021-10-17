@@ -6,7 +6,7 @@ const env = {
     'FOLDER_BUILD': 'build',
     'SERVER_INDEX_PAGE': 'index.html',
     'OPTIMIZE_IMAGES': true,
-    'PNG_OPTIMIZE': false,
+    'PNG_OPTIMIZE': true,
     'PNG_SPRITE': false,
     sourcemaps: true,
     sourceFolder: 'src',

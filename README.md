@@ -15,8 +15,8 @@ Modular builder for frontend development based on Gulp 4 and Webpack 5 including
 - Images png sprites and support retina.
 
 ## Requirements
-* Node >= 12.0.0
-* Gulp cli >= 2.3.0
+* Node >= 12.20.0 or latest version
+* Gulp cli >= 2.3.0 or latest version
 
 ## Guide
 #### Install dependencies

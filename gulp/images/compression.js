@@ -1,6 +1,11 @@
 import gulp from 'gulp';
 import * as config from '../config.js';
 import { $ } from '../helper.js';
+import imagemin, {
+    gifsicle,
+    mozjpeg,
+    optipng
+} from 'gulp-imagemin';
 const { src, dest } = gulp;
 const { OPTIMIZE_IMAGES, PNG_OPTIMIZE } = config.argvMode;
 
@@ -9,19 +14,17 @@ const imagesOptimize = done => {
         return src(`${config.imagesPath.src}/**/*.*`)
             .pipe($.newer(config.imagesPath.dist))
             .pipe($.debug({ title: 'images' }))
-            .pipe($.imagemin([
-                $.imagemin.gifsicle({
+            .pipe(imagemin([
+                gifsicle({
                     interlaced: true
                 }),
-                $.imagemin.jpegtran({
+                mozjpeg({
+                    quality: 80,
                     progressive: true
-                }),
-                $.imageminJpegoptim({
-                    max: 80
                 })
             ]))
-            .pipe($.if(PNG_OPTIMIZE, $.imagemin([
-                $.imagemin.optipng({
+            .pipe($.if(PNG_OPTIMIZE, imagemin([
+                optipng({
                     optimizationLevel: 5
                 })
             ])))

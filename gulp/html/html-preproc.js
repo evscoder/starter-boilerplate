@@ -52,7 +52,7 @@ export default class HTMLPreproc {
             return src(config.email.filesSrc)
                 .pipe($.plumber(notifyErr()))
                 .pipe($.mjml())
-                .pipe($.htmlPrettify(prettify))
+                .pipe($.htmlBeautify(prettify))
                 .pipe(dest(config.email.dist));
         }
 
@@ -79,7 +79,7 @@ export default class HTMLPreproc {
                 usePrefix: false
             }))
             .pipe(generateStaticPath())
-            .pipe($.htmlPrettify(prettify))
+            .pipe($.htmlBeautify(prettify))
             .pipe($.if(htmlMinify && !templateCache, $.htmlmin({
                 removeComments: true,
                 collapseWhitespace: true,

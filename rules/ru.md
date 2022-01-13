@@ -1,5 +1,5 @@
 <p align="right">
-    <a href="en.md">На английском</a> / <a href="../README.md">Назад</a>
+    <a href="../README.md">Назад</a>
 </p>
 
 #### Общие правила.

@@ -1,16 +1,8 @@
-- const PATH = pathPrefix;
-- const lang = 'ru';
-- const blocks = {}
-
-mixin placeholderPath(path=PATH)
-    -
-        staticPath = {
-            css: `${path}assets/css`,
-            js: `${path}assets/js`,
-            img: `${path}assets/img/content`,
-        }
-
-mixin set(key)
-    - blocks[key] = this.block
-
-+placeholderPath()
+-
+    const PATH = pathPrefix;
+    const lang = 'ru';
+    const staticPath = {
+        css: `${PATH}assets/css`,
+        js: `${PATH}assets/js`,
+        img: `${PATH}assets/img/content`
+    };

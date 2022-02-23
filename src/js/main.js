@@ -1,20 +1,49 @@
 import 'normalize-css/normalize.css';
 import ready from './fn/ready.js';
 import imageReady from './fn/images-ready.js';
-import { isTouchDevices } from './fn/detected.js';
+import {
+    isMobilePlatform,
+    isPlatformIOS,
+    isTouchDevices
+} from './fn/detected.js';
 
 class App {
-    static init() {
+    constructor() {
+        this.onReady = this.onReady.bind(this);
+        this.onImageReady = this.onImageReady.bind(this);
+        this.setDetected();
+        this.init();
+    }
+
+    setDetected() {
         if (isTouchDevices) {
             document.querySelector('html').classList.add('is-touch');
         }
 
-        imageReady(document.querySelector('body'), () => {
-            document.querySelector('body').classList.add('load');
-        });
+        if (isMobilePlatform) {
+            document.querySelector('html').classList.add('is-mobile-platform');
+        }
+
+        if (isPlatformIOS) {
+            document.querySelector('html').classList.add('ios');
+        }
+    }
+
+    onImageReady() {
+        document.querySelector('body').classList.add('load');
+    }
+
+    onReady() {
+        imageReady(document.querySelector('body'), this.onImageReady);
+    }
+
+    init() {
+        ready(this.onReady);
+    }
+
+    dispose() {
+
     }
 }
 
-ready(() => {
-    App.init();
-});
+const app = new App();

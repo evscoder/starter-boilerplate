@@ -30,11 +30,11 @@ class App {
     }
 
     onImageReady() {
-        document.querySelector('body').classList.add('load');
+        document.body.classList.add('load');
     }
 
     onReady() {
-        imageReady(document.querySelector('body'), this.onImageReady);
+        imageReady(document.body, this.onImageReady);
     }
 
     init() {

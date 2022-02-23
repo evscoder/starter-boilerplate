@@ -1,5 +1,4 @@
 import 'normalize-css/normalize.css';
-import ready from './fn/ready.js';
 import imageReady from './fn/images-ready.js';
 import {
     isMobilePlatform,
@@ -38,7 +37,7 @@ class App {
     }
 
     init() {
-        ready(this.onReady);
+        document.addEventListener('DOMContentLoaded', this.onReady);
     }
 
     dispose() {

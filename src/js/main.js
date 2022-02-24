@@ -16,15 +16,15 @@ class App {
 
     setDetected() {
         if (isTouchDevices) {
-            document.querySelector('html').classList.add('is-touch');
+            document.documentElement.classList.add('is-touch');
         }
 
         if (isMobilePlatform) {
-            document.querySelector('html').classList.add('is-mobile-platform');
+            document.documentElement.classList.add('is-mobile-platform');
         }
 
         if (isPlatformIOS) {
-            document.querySelector('html').classList.add('ios');
+            document.documentElement.classList.add('ios');
         }
     }
 

@@ -8,7 +8,7 @@ Modular builder for frontend development based on Gulp 4 and Webpack 5 including
 - Preprocessor Sass (Scss).
 - System build Gulp 4 and Webpack 5.
 - Support pure ESM package or ES Modules.
-- Support ES6 and Next syntax JavaScript.
+- Support ES6 and Next syntax JavaScript or TypeScript next.
 - Babel.
 - Eslint.
 - SVG sprites.

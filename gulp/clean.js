@@ -11,7 +11,7 @@ export default class Clean {
     static cleanBuild() {
         return $.del([
             `./*.zip`,
-            `${developer}/**/*`,
+            `${developer}/ts/`,
             `${production}/**/*`
         ]);
     }

@@ -8,6 +8,7 @@ const env = {
     'OPTIMIZE_IMAGES': true,
     'PNG_OPTIMIZE': true,
     'PNG_SPRITE': false,
+    typeScript: false,
     sourcemaps: true,
     sourceFolder: 'src',
     developer: 'dev',

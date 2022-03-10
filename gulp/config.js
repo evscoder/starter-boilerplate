@@ -25,6 +25,7 @@ export const loadPlugins = {
 };
 
 const templateDataFileName = '__snapshot-data-components__.json';
+const scriptExt = argvMode.typeScript ? 'ts' : 'js';
 
 const getTemplateExt = () => {
     switch (argvMode.templatePreproc) {
@@ -72,7 +73,7 @@ const styles = {
 
 const webpackPath = {
     entry: {
-        main: `./${sourceFolder}/js/main.js`
+        main: `./${sourceFolder}/js/main.${scriptExt}`
     },
     output: `${assets}/js/`
 };
@@ -107,10 +108,10 @@ const watchPath = {
     css: `${sourceFolder}/{styles,components}/**/*.scss`,
     js: {
         src: [
-            `${sourceFolder}/**/*.js`,
+            `${sourceFolder}/**/*.${scriptExt}`,
             `!${sourceFolder}/js/vendor/**`
         ],
-        vendor: `${scriptsPath.src}/**/*.js`
+        vendor: `${scriptsPath.src}/**/*.${scriptExt}`
     },
     sprite: `${imagesPath.src}/content/icons/**/*.png`,
     svg: `${imagesPath.src}/icons/**/*.svg`,

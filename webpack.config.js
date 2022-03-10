@@ -27,6 +27,10 @@ const webpackConfig = {
                     }
                 ]
             }, {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }, {
                 test: /\.css$/,
                 exclude: [
                     path.resolve(dirname, './src/components/'),
@@ -64,6 +68,7 @@ const webpackConfig = {
         filename: '[name].js'
     },
     resolve: {
+        extensions: ['.ts', '.tsx', '.js'],
         alias: {}
     }
 };

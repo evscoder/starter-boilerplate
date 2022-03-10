@@ -14,12 +14,14 @@ if (OPTIMIZE_IMAGES && production) {
 }
 
 export default class Copy {
-    static tasks = () => parallel(
-        Copy.emailsCopy,
-        Copy.scriptsCopy,
-        Copy.filesCopy,
-        Copy.assetsCopy
-    )
+    static tasks() {
+        return parallel(
+            Copy.emailsCopy,
+            Copy.scriptsCopy,
+            Copy.filesCopy,
+            Copy.assetsCopy
+        );
+    }
 
     static emailsCopy(done) {
         if (EMAILS_BUILD) {

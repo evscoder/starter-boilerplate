@@ -22,7 +22,7 @@ task('default', series(
 ));
 
 task('build', series(
-    Clean.cleanBuild,
+    Clean.cleanDev,
     Copy.tasks(),
     IMAGES.tasks(),
     parallel(
@@ -30,6 +30,7 @@ task('build', series(
         Styles.stylesRun,
         Scripts.jsRun
     ),
+    Clean.cleanBuild,
     Copy.copyBuild,
     zip
 ));

@@ -1,0 +1,32 @@
+<svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<g filter="url(#filter0_b_2658_11933)">
+		<path transform="rotate(-45 15.32 15)" fill="#FDBF5E" fill-opacity=".9" d="M15.32 15H35.32V35H15.32z"/>
+	</g>
+	<g filter="url(#filter1_b_2658_11933)">
+		<path transform="rotate(-45 10.32 15)" fill="#FF8A48" fill-opacity=".7" d="M10.32 15H30.32V35H10.32z"/>
+	</g>
+	<g filter="url(#filter2_b_2658_11933)">
+		<path transform="rotate(-45 5.32 15)" fill="#FF3D57" fill-opacity=".6" d="M5.32 15H25.32V35H5.32z"/>
+	</g>
+	<path transform="rotate(-45 .178 15)" fill="#FF3D57" d="M0.178 15H20.178V35H0.178z"/>
+	<defs>
+		<filter id="filter0_b_2658_11933" x="8.32" y="-6.142" width="42.284" height="42.284" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5"/>
+			<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2658_11933"/>
+			<feBlend in="SourceGraphic" in2="effect1_backgroundBlur_2658_11933" result="shape"/>
+		</filter>
+		<filter id="filter1_b_2658_11933" x="3.32" y="-6.142" width="42.284" height="42.284" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5"/>
+			<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2658_11933"/>
+			<feBlend in="SourceGraphic" in2="effect1_backgroundBlur_2658_11933" result="shape"/>
+		</filter>
+		<filter id="filter2_b_2658_11933" x="-1.68" y="-6.142" width="42.284" height="42.284" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5"/>
+			<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2658_11933"/>
+			<feBlend in="SourceGraphic" in2="effect1_backgroundBlur_2658_11933" result="shape"/>
+		</filter>
+	</defs>
+</svg>

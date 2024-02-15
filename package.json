@@ -7,7 +7,7 @@
   "homepage": "https://evscoder.github.io/starter-boilerplate",
   "scripts": {
     "start": "gulp",
-    "build": "cross-env NODE_ENV=production gulp build",
+    "build": "npm run update-version-minor && cross-env NODE_ENV=production gulp build",
     "update-version-minor": "npm version minor",
     "update-version-major": "npm version major",
     "lint": "eslint src --fix --ext ts,js,tsx --report-unused-disable-directives --max-warnings 0",

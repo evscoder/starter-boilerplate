@@ -16,6 +16,7 @@ const env = {
     styleFileName: 'main',
     templatePreproc: 'pug', // Values 'pug' or 'nunjucks'
     templateLocals: {
+        version: '',
         symbolsInject: false,
         pathPrefix: '__static__'
     },

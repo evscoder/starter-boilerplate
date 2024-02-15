@@ -14,6 +14,7 @@ const {
     htmlMinify
 } = config.argvMode;
 const { production } = config.argvMode.env;
+const { version } = createRequire(import.meta.url)('../../package.json');
 
 const emittyConfig = (() => {
     if (templatePreproc === 'nunjucks') {
@@ -36,6 +37,7 @@ let { templateCache } = config.argvMode;
 
 if (production) {
     templateCache = false;
+    templateLocals.version = '?ver' + version;
 }
 
 if (templateLocals.symbolsInject) {

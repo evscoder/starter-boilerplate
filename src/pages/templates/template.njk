@@ -13,10 +13,10 @@
         {{ Head.content(head.default, pathPrefix) }}
         {% block styles %}
             {% for item in concat.css %}
-                <link href="{{ pathPrefix }}assets/css/{{ item.name }}" rel="stylesheet">
+                <link href="{{ pathPrefix }}assets/css/{{ item.name }}{{ version }}" rel="stylesheet">
             {% endfor %}
-            <link href="{{ pathPrefix }}assets/css/vendor.css" rel="stylesheet">
-            <link href="{{ pathPrefix }}assets/css/main.css" rel="stylesheet">
+            <link href="{{ pathPrefix }}assets/css/vendor.css{{ version }}" rel="stylesheet">
+            <link href="{{ pathPrefix }}assets/css/main.css{{ version }}" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
@@ -34,8 +34,8 @@
             {% for item in concat.js %}
                 <script src="{{ pathPrefix }}assets/js/{{ item.name }}" {% for props, val in item.props %} {{ props }}="{{ val }}" {% endfor %}></script>
             {% endfor %}
-            <script src="{{ pathPrefix }}assets/js/vendor.js"></script>
-            <script src="{{ pathPrefix }}assets/js/main.js"></script>
+            <script src="{{ pathPrefix }}assets/js/vendor.js{{ version }}"></script>
+            <script src="{{ pathPrefix }}assets/js/main.js{{ version }}"></script>
         {% endblock %}
     </body>
 </html>

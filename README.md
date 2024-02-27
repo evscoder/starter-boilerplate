@@ -20,6 +20,8 @@ Modular builder for frontend development based on Gulp 4 and Webpack 5 including
 - Images png sprites and support retina.
 - User Settings.
 
+#### The MIT License
+
 ## Requirements
 * Node >= 16.15.1 or latest version
 * Gulp cli >= 2.3.0
@@ -39,13 +41,11 @@ npx husky init
 ```commandline
 npm start
 ```
-```commandline
-Local server http://localhost:8080/
-```
+
+#### Local server
+[http://localhost:8080/](http://localhost:8080/)
 
 #### Create build
 ```commandline
 npm run build
 ```
-
-#### The MIT License

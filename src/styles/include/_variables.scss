@@ -36,7 +36,9 @@ $breakpoints: (
     --font-feature: 'pnum' on, 'lnum' on;
 
     /* Other */
-    --container-width: 1200px;
+    --base-container-width: 1200;
+
+    --container-width: calc(var(--base-container-width) * 1px);
     --container-gutter: 15px;
 
     @media screen and (max-width: 1199px) {

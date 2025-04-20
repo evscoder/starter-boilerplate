@@ -1,0 +1,14 @@
+extends templates/template
+append components
+    -
+        page = {
+            id: 'home',
+            title: 'Starter Boilerplate',
+            attrs: {},
+            content: {}
+        }
+
+block content
+    .container
+        img(src=images.Logo, width='200' style='margin-top: 50px;')
+        h1=page.title

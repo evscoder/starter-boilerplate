@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import { reload } from '../helper.js';
 import Data from './data.js';
-import HTMLPreproc from './html-preproc.js';
+import Template from './template.js';
 const { parallel, series } = gulp;
 
 export default class HTML {
@@ -9,14 +9,14 @@ export default class HTML {
         return series(
             Data.dataRun,
             parallel(
-                HTMLPreproc.htmlCompile,
-                HTMLPreproc.emailsCompile
+                Template.htmlCompile,
+                Template.emailsCompile
             )
         );
     }
 
     static templates() {
-        return HTMLPreproc.htmlCompile;
+        return Template.htmlCompile;
     }
 
     static data() {
@@ -24,6 +24,6 @@ export default class HTML {
     }
 
     static emails() {
-        return series(HTMLPreproc.emailsCompile, reload);
+        return series(Template.emailsCompile, reload);
     }
 }

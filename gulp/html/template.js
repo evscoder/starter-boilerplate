@@ -51,15 +51,15 @@ if (templateLocals.symbolsInject) {
     });
 }
 
-export default class HTMLPreproc {
+export default class Template {
     static htmlCompile() {
         if (!templateCache) {
-            return HTMLPreproc.task();
+            return Template.task();
         }
 
         return new Promise((resolve, reject) => {
             emitty.scan(global.emittyPugChangedFile)
-                .then(HTMLPreproc.task(resolve, reject))
+                .then(Template.task(resolve, reject))
                 .catch(event => console.log(event));
         });
     }

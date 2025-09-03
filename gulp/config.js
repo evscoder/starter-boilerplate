@@ -67,7 +67,7 @@ export const webpackPath = {
     entry: {
         main: `./${sourceFolder}/js/main.${scriptExt}`
     },
-    output: `${assets}/js/`
+    output: `../${assets}/js/`
 };
 
 export const scriptsPath = {

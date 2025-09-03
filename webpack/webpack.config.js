@@ -5,7 +5,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import WebpackBar from "webpackbar";
 import WebpackShellPluginNext from 'webpack-shell-plugin-next';
-import { argvMode, webpackPath } from './gulp/config.js';
+import { argvMode, webpackPath } from '../gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
 const devTool = production ? false : 'source-map';
@@ -16,7 +16,14 @@ const rules = [
             MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
-            'sass-loader'
+            {
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        quietDeps: true
+                    }
+                }
+            }
         ]
     },
     {

@@ -13,8 +13,7 @@
     "build": "cross-env NODE_ENV=production gulp build",
     "update-version-minor": "npm version minor",
     "update-version-major": "npm version major",
-    "lint": "eslint src --fix --ext ts,js,tsx --report-unused-disable-directives --max-warnings 0",
-    "prepare": "husky"
+    "lint": "eslint src --fix --ext ts,js,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "repository": {
     "type": "git",
@@ -77,9 +76,9 @@
     "through2": "^3.0.1",
     "ts-loader": "^9.4.1",
     "typescript": "^5.9.2",
-    "webpack": "^5.58.1",
-    "webpack-stream": "^7.0.0",
+    "webpack": "^5.101.3",
     "webpack-shell-plugin-next": "^2.3.3",
+    "webpack-stream": "^7.0.0",
     "webpackbar": "^7.0.0"
   },
   "dependencies": {

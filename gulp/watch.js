@@ -3,7 +3,7 @@ import path from 'path';
 import * as config from './config.js';
 import { $, browser, reload } from './helper.js';
 import HTML from './html/html.js';
-import Scripts from './js-compile.js';
+import Scripts from './js.js';
 import * as Images from './images/images.js';
 import Copy from './copy.js';
 const { watch, series } = gulp;
@@ -36,7 +36,7 @@ const serveWatch = () => {
 
     watch(watchPath.templates, { delay: 0 }, series(
         HTML.templates(),
-        Scripts.jsRun,
+        Scripts.run,
         reload
     )).on('all', (event, file) => {
         if (event === 'unlink') {
@@ -48,8 +48,8 @@ const serveWatch = () => {
 
     watch(watchPath.data, HTML.data());
     watch(watchPath.email, HTML.emails());
-    watch(watchPath.css, series(Scripts.jsRun, reload));
-    watch(watchPath.js.src, series(Scripts.jsRun, reload));
+    watch(watchPath.css, series(Scripts.run, reload));
+    watch(watchPath.js.src, series(Scripts.run, reload));
 
     watch(watchPath.js.vendor, series(Copy.scriptsCopy, reload))
         .on('unlink', event => deleteEventFile(event, config.assets));

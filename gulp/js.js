@@ -1,12 +1,12 @@
 import gulp from 'gulp';
-import { webpackConfig } from '../webpack.config.js';
+import { webpackConfig } from '../webpack/webpack.config.js';
 import * as config from './config.js';
 import { $, notifyErr } from './helper.js';
 const { src, dest } = gulp;
 const { entry } = config.webpackPath;
 
 export default class Scripts {
-    static jsRun() {
+    static run() {
         const entryPaths = [];
 
         Object.entries(entry).forEach(([, value]) => entryPaths.push(value));

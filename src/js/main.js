@@ -1,13 +1,11 @@
-import 'normalize-css/normalize.css';
-import 'animate.css';
-import '../tailwind.css';
-import '../styles.scss';
+import '../declare-styles.js';
 
 import {
     isMobilePlatform,
     isPlatformIOS,
     isTouchDevices
 } from './fn/detected.js';
+import Header from '../components/layout/header/header.js';
 
 class App {
     constructor() {
@@ -34,11 +32,12 @@ class App {
     };
 
     onReady = () => {
-        window.addEventListener('load', this.onLoaded);
+        new Header();
     };
 
     init() {
         document.addEventListener('DOMContentLoaded', this.onReady);
+        window.addEventListener('load', this.onLoaded);
     }
 
     dispose() {

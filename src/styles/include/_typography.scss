@@ -1,4 +1,4 @@
-@use "plugins/mixins" as *;
+@use "../plugins/mixins" as *;
 
 h1,
 .h1,
@@ -12,6 +12,10 @@ h5,
 .h5 {
     font-family: var(--font-family-secondary);
     line-height: initial;
+}
+
+h1, .h1 {
+    margin: 0;
 }
 
 a {

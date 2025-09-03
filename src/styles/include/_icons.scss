@@ -1,5 +1,5 @@
-@use "plugins/sprite" as *;
-@use "plugins/sprite-mixin" as *;
+@use "../plugins/sprite" as *;
+@use "../plugins/sprite-mixin" as *;
 
 $generate-sprites: false;
 

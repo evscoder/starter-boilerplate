@@ -4,8 +4,7 @@ export const argvMode = Object.assign({}, env, {
     env: {
         production: process.env.NODE_ENV === 'production'
     },
-    templateCache: true,
-    minifyCss: false
+    templateCache: true
 });
 
 export const {
@@ -13,7 +12,6 @@ export const {
     developer,
     assets,
     FOLDER_BUILD: production,
-    styleFileName,
     imageFolderName
 } = argvMode;
 
@@ -40,7 +38,7 @@ const getTemplateExt = (() => {
     return 'pug';
 })();
 
-const template = {
+export const template = {
     src: [
         `${sourceFolder}/pages/**/[^_]*.${getTemplateExt}`,
         `!${sourceFolder}/**/{components,templates}/**/*.${getTemplateExt}`
@@ -59,31 +57,25 @@ const template = {
     dist: `${developer}/`
 };
 
-const email = {
+export const email = {
     src: `${sourceFolder}/emails`,
     filesSrc: `${sourceFolder}/emails/[^_]*.mjml`,
     dist: `${assets}/emails/`
 };
 
-const styles = {
-    entry: `${sourceFolder}/styles/${styleFileName}.scss`,
-    components: `${sourceFolder}/components/**/*.scss`,
-    dist: `${assets}/css/`
-};
-
-const webpackPath = {
+export const webpackPath = {
     entry: {
         main: `./${sourceFolder}/js/main.${scriptExt}`
     },
     output: `${assets}/js/`
 };
 
-const scriptsPath = {
+export const scriptsPath = {
     src: `${sourceFolder}/js/vendor`,
     dist: `${assets}/js/vendor/`
 };
 
-const imagesPath = {
+export const imagesPath = {
     src: `${sourceFolder}/assets/${imageFolderName}`,
     spriteSrc: `${sourceFolder}/assets/${imageFolderName}/content/sprite`,
     spriteStylesDist: `${sourceFolder}/styles/include/plugins`,
@@ -91,12 +83,12 @@ const imagesPath = {
     dist: `${assets}/${imageFolderName}/`
 };
 
-const filesPath = {
+export const filesPath = {
     src: `${sourceFolder}/assets/misc/**/*`,
     dist: `${developer}/`
 };
 
-const watchPath = {
+export const watchPath = {
     templates: [
         `${sourceFolder}/**/[^_]*.${getTemplateExt}`
     ],
@@ -117,15 +109,4 @@ const watchPath = {
     svg: `${imagesPath.src}/icons/**/*.svg`,
     assets: `${sourceFolder}/assets/**/*.*`,
     files: `${sourceFolder}/assets/misc/**/*`
-};
-
-export {
-    template,
-    email,
-    styles,
-    webpackPath,
-    scriptsPath,
-    imagesPath,
-    filesPath,
-    watchPath
 };

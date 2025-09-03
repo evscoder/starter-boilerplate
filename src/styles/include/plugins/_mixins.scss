@@ -10,6 +10,33 @@
     overflow: hidden;
 }
 
+@mixin resetButton() {
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: inherit;
+}
+
+@mixin resetInput() {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+
+    &[type='text'] {
+        -webkit-appearance: none;
+    }
+
+    &[type='search'] {
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+}
+
 @mixin textEllipsis($rows: 1) {
     /*! autoprefixer: off */
     display: -webkit-box;

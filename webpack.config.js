@@ -7,14 +7,25 @@ import { argvMode, webpackPath } from './gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
 const devTool = production ? false : 'source-map';
-const rules = [{
-    test: /\.css$/,
-    exclude: [
-        path.resolve(dirname, './src/components/'),
-        path.resolve(dirname, './src/styles/')
-    ],
-    use: [MiniCssExtractPlugin.loader, 'css-loader']
-}];
+const rules = [
+    {
+        test: /\.s[ac]ss$/i,
+        use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+        ]
+    },
+    {
+        test: /\.css$/i,
+        use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader'
+        ]
+    }
+];
 
 if (argvMode.typeScript) {
     rules.push({

@@ -1,3 +1,8 @@
+@use "plugins/sprite" as *;
+@use "plugins/sprite-mixin" as *;
+
+$generate-sprites: false;
+
 [class^="icon"] {
     display: inline-block;
     vertical-align: middle;

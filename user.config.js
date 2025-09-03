@@ -1,5 +1,5 @@
 const env = {
-    'PROJECT_VERSION': null, // "1.0"
+    'PROJECT_VERSION': null, // @Default version "1.0"
     'BACKUP': true,
     'EMAILS_BUILD': true,
     'FOLDER_BUILD': 'build',
@@ -13,22 +13,13 @@ const env = {
     developer: 'dev',
     assets: 'dev/assets',
     imageFolderName: 'img',
-    styleFileName: 'main',
-    templatePreproc: 'pug', // Values 'pug' or 'nunjucks'
+    templatePreproc: 'pug', // @String = 'pug' | 'nunjucks'
     templateLocals: {
         version: '',
         symbolsInject: false,
         pathPrefix: '__static__'
     },
-    styles: {
-        pathPrefix: '__static__'
-    },
     cssMinify: true,
-    cssPrettify: {
-        indent: '    ',
-        openbrace: 'end-of-line',
-        autosemicolon: true
-    },
     htmlMinify: false,
     prettify: {
         'indent_char': ' ',
@@ -36,7 +27,7 @@ const env = {
         'indent_level': 1,
         'preserve_newlines': true,
         'max_preserve_newlines': 1
-    },
+    }
 };
 
 export default env;

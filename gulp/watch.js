@@ -3,7 +3,6 @@ import path from 'path';
 import * as config from './config.js';
 import { $, browser, reload } from './helper.js';
 import HTML from './html/html.js';
-import Styles from './css-compile.js';
 import Scripts from './js-compile.js';
 import * as Images from './images/images.js';
 import Copy from './copy.js';
@@ -35,18 +34,21 @@ const serveWatch = () => {
         ui: false
     });
 
-    watch(watchPath.templates, { delay: 0 }, HTML.templates())
-        .on('all', (event, file) => {
-            if (event === 'unlink') {
-                global.emittyPugChangedFile = undefined;
-            } else {
-                global.emittyPugChangedFile = file;
-            }
-        });
+    watch(watchPath.templates, { delay: 0 }, series(
+        HTML.templates(),
+        Scripts.jsRun,
+        reload
+    )).on('all', (event, file) => {
+        if (event === 'unlink') {
+            global.emittyPugChangedFile = undefined;
+        } else {
+            global.emittyPugChangedFile = file;
+        }
+    });
 
     watch(watchPath.data, HTML.data());
     watch(watchPath.email, HTML.emails());
-    watch(watchPath.css, series(Styles.stylesRun, reload));
+    watch(watchPath.css, series(Scripts.jsRun, reload));
     watch(watchPath.js.src, series(Scripts.jsRun, reload));
 
     watch(watchPath.js.vendor, series(Copy.scriptsCopy, reload))

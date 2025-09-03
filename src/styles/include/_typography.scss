@@ -1,3 +1,5 @@
+@use "plugins/mixins" as *;
+
 h1,
 .h1,
 h2,
@@ -8,12 +10,8 @@ h4,
 .h4,
 h5,
 .h5 {
-    margin-top: 0;
     font-family: var(--font-family-secondary);
-}
-
-p {
-    margin: 0 0 1.5rem;
+    line-height: initial;
 }
 
 a {
@@ -27,10 +25,10 @@ a {
 }
 
 .link-under {
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid;
 
     &:hover {
-        border-bottom: 1px solid;
+        border-bottom: 1px solid transparent;
     }
 }
 
@@ -62,4 +60,12 @@ b {
 
 .text-nowrap {
     white-space: nowrap;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
 }

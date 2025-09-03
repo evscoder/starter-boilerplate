@@ -1,3 +1,5 @@
+@use "plugins/include-media" as *;
+
 :root {
     // Colors
     --black: #202833;
@@ -28,17 +30,9 @@
     --container-gutter: 15px;
     --container-width: calc(var(--base-container-width) * 1px + var(--container-gutter) * 2);
 
-    @include media('<lg') {
-
-    }
-
-    @include media('<sm-tablet') {
-
-    }
-
-    @include media('<sm') {
-
-    }
+    @media (width < bp('lg')) {}
+    @media (width < bp('sm-tablet')) {}
+    @media (width < bp('sm')) {}
 }
 
 @media (prefers-color-scheme: dark), (prefers-color-scheme: light) {

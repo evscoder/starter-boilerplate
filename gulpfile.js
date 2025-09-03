@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import HTML from './gulp/html/html.js';
-import Styles from './gulp/css-compile.js';
 import Scripts from './gulp/js-compile.js';
 import IMAGES from './gulp/images/images.js';
 import Copy from './gulp/copy.js';
@@ -15,7 +14,6 @@ task('default', series(
     IMAGES.tasks(),
     parallel(
         HTML.tasks(),
-        Styles.stylesRun,
         Scripts.jsRun
     ),
     serveWatch
@@ -27,7 +25,6 @@ task('build', series(
     IMAGES.tasks(),
     parallel(
         HTML.tasks(),
-        Styles.stylesRun,
         Scripts.jsRun
     ),
     Clean.cleanBuild,

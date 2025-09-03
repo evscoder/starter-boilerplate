@@ -16,7 +16,7 @@ export default class HTML {
     }
 
     static templates() {
-        return series(HTMLPreproc.htmlCompile, reload);
+        return HTMLPreproc.htmlCompile;
     }
 
     static data() {

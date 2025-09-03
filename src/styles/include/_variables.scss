@@ -1,4 +1,4 @@
-@use "../plugins/include-media" as *;
+//@use "../plugins/include-media" as *;
 
 :root {
     // Colors
@@ -33,6 +33,7 @@
     @media (width < bp('lg')) {}
     @media (width < bp('sm-tablet')) {}
     @media (width < bp('sm')) {}
+    @include media('<sm-tablet') {}
 }
 
 @media (prefers-color-scheme: dark), (prefers-color-scheme: light) {

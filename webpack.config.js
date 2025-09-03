@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import WebpackBar from "webpackbar";
+import WebpackShellPluginNext from 'webpack-shell-plugin-next';
 import { argvMode, webpackPath } from './gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
@@ -52,10 +54,29 @@ const webpackConfig = {
     mode: production ? 'production' : 'development',
     devtool: argvMode.sourcemaps ? 'source-map' : devTool,
     entry: webpackPath.entry,
+    stats: {
+        all: false,
+        errors: true,
+        warnings: true,
+        errorsCount: true,
+        timings: true,
+        errorDetails: false
+    },
+    infrastructureLogging: {
+        level: 'none'
+    },
     module: {
         rules
     },
     plugins: [
+        new WebpackShellPluginNext({
+            onBuildStart: {
+                scripts: ['clear'],
+                blocking: true,
+                parallel: false
+            }
+        }),
+        new WebpackBar(),
         new MiniCssExtractPlugin({
             filename: '../css/[name].css'
         }),

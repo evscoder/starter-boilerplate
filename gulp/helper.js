@@ -11,9 +11,14 @@ const reload = done => {
 
 const notifyErr = title => {
     return $.notify.onError(err => {
+        let msg = err.message || '';
+
+        const match = msg.match(/(Error:[^\n]+|Undefined[^\n]+)/i);
+        let shortMessage = match ? match[0] : msg.split('\n')[0];
+
         return {
             title: title,
-            message: err.message
+            message: shortMessage.trim()
         };
     });
 };

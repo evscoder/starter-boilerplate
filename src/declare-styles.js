@@ -2,4 +2,3 @@
 // import 'animate.css';
 import './tailwind.css';
 import './styles.scss';
-import './components/layout/footer/footer.scss';

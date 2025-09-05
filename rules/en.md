@@ -37,8 +37,7 @@ src/                        # Root project folder
 │
 ├── styles/                 # Project styling
 │   └── include/            # SCSS partials
-│
-├── plugins/                # SCSS plugins
+│   └── plugins/            # SCSS plugins           
 │
 ├── declare-styles.js       # Global style declarations/generator
 ├── styles.scss             # Main SCSS file

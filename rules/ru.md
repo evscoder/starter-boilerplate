@@ -107,10 +107,10 @@ block {
 
 Используются только css переменные, которые хранятся в файле `variables`. Цвета именуются в таком порядке:
 ```commandline
---gray-color: #626263;
---gray-color-2: #727273;
---gray-color-3: #525253;
---gray-color-4: #f8f8f8;
+--gray: #626263;
+--gray2: #727273;
+--gray3: #525253;
+--gray4: #f8f8f8;
 ```
 
 4. Писать JavaScript используя последние возможности EcmaScript - ES6, ES7 и более новые для более понятного кода (https://www.ecma-international.org/publications-and-standards/standards/ecma-262/). Писать модули в ООП используя классы в JavaScript.

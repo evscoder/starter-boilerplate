@@ -91,18 +91,18 @@ Media queries are written nested for each block
 block {
     width: 50%;
 
-    @media screen and (max-width: 767px) {
+    @media (width < bq('sm-tablet')) {
         width: 75%;
     }
 
-    @media screen and (max-width: 568px) {
+    @media (width < bq('sm')) {
         width: 100%;
     }
 
     &__element: {
         width: min(80%, 700px);
 
-        @media screen and (max-width: 767px) {
+        @media (width < bq('sm-tablet') {
             width: 100%;
         }
     }

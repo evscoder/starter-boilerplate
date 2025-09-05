@@ -109,10 +109,10 @@ block {
 ```
 3) Only css variables are used, which are stored in the `variables` file. The colors are named in this order:
 ```commandline
---gray-color: #626263;
---gray-color-2: #727273;
---gray-color-3: #525253;
---gray-color-4: #f8f8f8;
+--gray: #626263;
+--gray2: #727273;
+--gray3: #525253;
+--gray4: #f8f8f8;
 ```
 4. Write JavaScript using the latest features of EcmaScript - ES6, ES7 and newer for more understandable code (https://www.ecma-international.org/publications-and-standards/standards/ecma-262/). Write modules in OOP using classes in JavaScript.
    Do global imports in the main.js file.

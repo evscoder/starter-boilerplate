@@ -79,7 +79,7 @@ export const imagesPath = {
     src: `${sourceFolder}/assets/${imageFolderName}`,
     spriteSrc: `${sourceFolder}/assets/${imageFolderName}/content/sprite`,
     spriteStylesDist: `${sourceFolder}/styles/include/plugins`,
-    svgSrc: `${sourceFolder}/assets/${imageFolderName}/icons`,
+    svgSrc: `${sourceFolder}/assets/${imageFolderName}/svg`,
     dist: `${assets}/${imageFolderName}/`
 };
 
@@ -106,7 +106,7 @@ export const watchPath = {
         vendor: `${scriptsPath.src}/**/*.${scriptExt}`
     },
     sprite: `${imagesPath.src}/content/sprite/**/*.png`,
-    svg: `${imagesPath.src}/icons/**/*.svg`,
+    svg: `${imagesPath.src}/svg/**/*.svg`,
     assets: `${sourceFolder}/assets/**/*.*`,
     files: `${sourceFolder}/assets/misc/**/*`
 };

@@ -42,7 +42,7 @@ if (production) {
 if (templateLocals.symbolsInject) {
     patterns.push({
         match: '%symbols%',
-        replacement: (() => fs.readFileSync(`${config.imagesPath.dist}/svg-symbols.svg`, 'utf8'))
+        replacement: (() => fs.readFileSync(`${config.imagesPath.dist}/symbols.svg`, 'utf8'))
     });
 } else {
     patterns.push({

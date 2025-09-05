@@ -21,7 +21,7 @@ const svgSprite = () => {
                 }
             }
         ))
-        .pipe($.rename({ basename: 'svg-symbols' }))
+        .pipe($.rename({ basename: 'symbols' }))
         .pipe(dest(config.imagesPath.dist));
 };
 

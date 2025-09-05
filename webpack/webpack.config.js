@@ -8,17 +8,32 @@ import WebpackShellPluginNext from 'webpack-shell-plugin-next';
 import { argvMode, webpackPath } from '../gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
-const devTool = production ? false : 'source-map';
+
+const sourceMap = argvMode.sourcemaps ? true : !production;
+
 const rules = [
     {
         test: /\.s[ac]ss$/i,
         use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
+            {
+                loader: MiniCssExtractPlugin.loader
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap
+                }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap
+                }
+            },
             {
                 loader: 'sass-loader',
                 options: {
+                    sourceMap,
                     sassOptions: {
                         quietDeps: true
                     }
@@ -29,9 +44,21 @@ const rules = [
     {
         test: /\.css$/i,
         use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader'
+            {
+                loader: MiniCssExtractPlugin.loader
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap
+                }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap
+                }
+            }
         ]
     }
 ];
@@ -57,9 +84,19 @@ if (argvMode.typeScript) {
     });
 }
 
+let devtool;
+
+if (argvMode.sourcemaps) {
+    devtool = 'source-map';
+} else if (production) {
+    devtool = false;
+} else {
+    devtool = 'source-map';
+}
+
 const webpackConfig = {
     mode: production ? 'production' : 'development',
-    devtool: argvMode.sourcemaps ? 'source-map' : devTool,
+    devtool,
     entry: webpackPath.entry,
     stats: {
         all: false,
@@ -78,7 +115,7 @@ const webpackConfig = {
     plugins: [
         new WebpackShellPluginNext({
             onBuildStart: {
-                scripts: ['clear'],
+                scripts: production ? [] : ['clear'],
                 blocking: true,
                 parallel: false
             }

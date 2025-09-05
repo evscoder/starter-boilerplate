@@ -25,10 +25,10 @@ const serveWatch = () => {
         watchOptions: {
             ignoreInitial: true
         },
-        open: true,
-        port: 8080,
+        open: false,
         tunnel: false,
         online: false,
+        port: 4200,
         notify: true,
         logConnections: true,
         ui: false

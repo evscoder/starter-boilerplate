@@ -14,9 +14,13 @@ The project is built using the npm run build command.
 All necessary commands for working with the project, as well as dependencies, can be viewed in package.json.
 
 #### General development instructions.
-The project consists of components that are located in the src folder. New components should be developed in this folder. To do this, you need to create a new folder and in it create the necessary files in the following formats: json, pug, scss, js, depending on what files are required.
-The component is created in the components folder with pug, scss, js files. Along with the component files, you can create a data.json file to store the data. scss files in components are concatenated with the main.scss file automatically. The js files are compiled by webpack.
-In the assets/img/icons/ folder it is intended for icons in svg format. Here the icons are processed and collected into a common sprite file svg-symbols, which is generated and reassembled. To insert an icon onto a page, you need to use the `+icon('icon-name')` mixin.
+The project consists of components located in the src folder.
+New components should be created in this folder. To do this, create a new subfolder and add the necessary files in the following formats: json, pug, scss, js, depending on what is required.
+
+A component is created inside the components folder with pug, scss, js files. Alongside these files, a data.json file can be added to store component data.
+
+The assets/img/svg/ folder is intended for SVG icons. Icons in this folder are processed and compiled into a shared sprite file (symbols), which is generated and rebuilt automatically.
+To insert an icon into a page, use the mixin `+icon('icon-name')`:
 
 1. Development is carried out according to the BEM methodology (information on BEM https://ru.bem.info/methodology/).
 2. Use the advantages of the Pug template engine - mixins, conditions, iterators, work with data in the data.json format in the component folder. Separate logic and data (https://pugjs.org/language/mixins.html).

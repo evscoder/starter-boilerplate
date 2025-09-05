@@ -12,6 +12,38 @@ Starting a project for development is done with the npm run start command.
 The project is built using the npm run build command.
 
 All necessary commands for working with the project, as well as dependencies, can be viewed in package.json.
+#### Structure project
+```commandline
+src/                        # Root project folder
+├── components/             # Interface components and pug configs
+│   ├── layout/             # Common layouts (header, footer, containers)
+│   ├── ui/                 # UI elements (buttons, forms, inputs, etc.)
+│   ├── head/               # Blocks for <head> (meta tags, favicon, SEO)
+│   ├── concat.json         # Config for script/style concatenation
+│   ├── config.pug          # Main pug configuration
+│   ├── mixins.pug          # Reusable pug mixins
+│   └── scripts.pug         # Script includes for templates
+│
+├── js/                     # JavaScript logic
+│   ├── modules/            # Core project modules (sliders, menus, etc.)
+│   ├── fn/                 # Utility functions
+│   ├── api/                # API integrations
+│   ├── vendor/             # Third-party libraries
+│   └── main.js             # Main JavaScript entry point
+│
+├── pages/                  # Project pages
+│   ├── templates/          # Pug templates for specific pages
+│   └── index.pug           # Main (home) page
+│
+├── styles/                 # Project styling
+│   └── include/            # SCSS partials
+│
+├── plugins/                # SCSS plugins
+│
+├── declare-styles.js       # Global style declarations/generator
+├── styles.scss             # Main SCSS file
+└── tailwind.css            # Tailwind CSS entry file
+```
 
 #### General development instructions.
 The project consists of components located in the src folder.

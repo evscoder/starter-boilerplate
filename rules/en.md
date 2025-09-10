@@ -2,6 +2,30 @@
     <a href="../README.md">Back to Readme</a>
 </p>
 
+<img width="200" height="auto" src="src/assets/img/content/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center">
+
+A modular builder for frontend development based on Gulp 4 and Webpack 5, including tools:
+- Template engines: Pug, Nunjucks, MJML, JSON.
+- Emitty plugin for incremental template building.
+- Scss preprocessor.
+- Build system with Gulp 4 and Webpack 5.
+- Support for pure ESM packages or ES modules.
+- Support for JavaScript with ES6 and Next syntax or TypeScript Next.
+- Husky. ESLint auto-fix on commit, major version bump on push.
+- Babel.
+- ESLint.
+- SVG sprites.
+- PNG sprites with Retina support.
+- User settings.
+
+  #### Advantages of the builder:
+- Incremental Pug template building is used. No template caching is involved, which significantly speeds up compilation. As the project grows, build speed remains consistent because only the components that change are recompiled.
+- Ability to import styles both in JavaScript and via `scss use`.
+- Option to choose between two template engines: Pug or Nunjucks.
+- Automatic sprite generation from SVG icons — just drop in an icon and the sprite will be generated.
+- TypeScript support.
+- The builder is easy to keep up to date, making future migrations straightforward.
+
 Recommended global dependencies:
 Node = next version download latest version https://nodejs.org/en.
 Gulp cli >= 2.0.1 install latest version npm install --global gulp-cli.

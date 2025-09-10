@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $breakpoints: (
-    'xs': 375px,
+    'xs': 374px,
     'sm': 576px,
     'sm-tablet': 768px,
     'md': 992px,
@@ -37,4 +37,5 @@ $media-expressions: (
         @error "Media expression `#{$bp}` не найден в $media-expressions";
     }
 }
+
 

@@ -4,19 +4,26 @@
 
 <img width="200" height="auto" src="src/assets/img/content/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center">
 
-Modular builder for frontend development based on Gulp 4 and Webpack 5 including tools:
-- Template Engine Pug, Nunjucks, MJML, JSON.
-- Emitty plugin for incremental template building.
-- Preprocessor Scss.
-- System build Gulp 4 and Webpack 5.
-- Support pure ESM package or ES Modules.
-- Support ES6 and Next syntax JavaScript or TypeScript next.
-- Husky. Eslint auto fix pre commit, step up major version pre push.
+Модульный конструктор для фронтенд-разработки на основе Gulp 4 и Webpack 5, включающий инструменты:
+- Шаблонизаторы Pug, Nunjucks, MJML, JSON.
+- Плагин Emitty для инкрементальной сборки шаблонов.
+- Препроцессор Scss.
+- Система сборки Gulp 4 и Webpack 5.
+- Поддержка чистых ESM-пакетов или ES-модулей.
+- Поддержка JavaScript с синтаксисом ES6 и Next либо TypeScript Next.
+- Husky. Автоисправление Eslint при commit, обновление мажорной версии при push.
 - Babel.
 - Eslint.
-- SVG sprites.
-- Images png sprites and support retina.
-- User Settings.
+- SVG-спрайты.
+- PNG-спрайты и поддержка Retina-дисплеев.
+- Пользовательские настройки.
+
+  #### Преимущества сборщика:
+- Используется инкрементальная сборка шаблонов Pug. Здесь не используется кэширование шаблонов, что значительно ускоряет сборку. С разрастанием проекта скорость сборки сохраняется, это достигается за счет того, что сборка шаблонов затрагивается только из тех компонентов, которые меняются.
+- Возможность импортировать стили как в js, так и использовать scss use.
+- Возможность использовать на выбор два шаблонизатора Pug или Nunjucs.
+- Генерация спрайта из svg иконок, достаточно перенести иконку и спрайт с генерируется.
+- Возможность использования TypeScript.
 
 ####  <a href="LICENSE">The MIT License</a>
 

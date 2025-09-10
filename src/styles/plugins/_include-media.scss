@@ -21,11 +21,20 @@ $media-expressions: (
 ) !default;
 
 @function bp($key) {
-    @return map.get($breakpoints, $key);
+    @if map.has-key($breakpoints, $key) {
+        @return map.get($breakpoints, $key);
+    } @else {
+        @error "Breakpoint `#{$key}` не найден в $breakpoints";
+    }
 }
 
 @mixin respond-to($bp) {
-    @media #{inspect(map.get($media-expressions, $bp))} {
-        @content;
+    @if map.has-key($media-expressions, $bp) {
+        @media #{inspect(map.get($media-expressions, $bp))} {
+            @content;
+        }
+    } @else {
+        @error "Media expression `#{$bp}` не найден в $media-expressions";
     }
 }
+

@@ -24,7 +24,8 @@ A modular builder for frontend development based on Gulp 4 and Webpack 5, includ
 - Option to choose between two template engines: Pug or Nunjucks.
 - Automatic sprite generation from SVG icons — just drop in an icon and the sprite will be generated.
 - TypeScript support.
-- The builder is easy to keep up to date, making future migrations straightforward.
+- The build system is easy to keep up to date, which simplifies future migrations. With the help of webpack configuration, it can be extended using various plugins.
+- The build system is independent of the global environment — only Node.js needs to be installed.
 
 Recommended global dependencies:
 Node = next version download latest version https://nodejs.org/en.

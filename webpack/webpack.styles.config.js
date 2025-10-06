@@ -34,9 +34,7 @@ export const stylesConfig = {
     infrastructureLogging: {
         level: 'none'
     },
-    entry: {
-        styles: stylesPath.entry
-    },
+    entry: stylesPath.entry,
     output: {
         path: path.resolve(dirname, stylesPath.dist),
         publicPath: stylesPath.dist,
@@ -97,7 +95,7 @@ export const stylesConfig = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: '../img/[name][ext]',
+                    filename: '../img/content/[name][ext]',
                     publicPath: ''
                 }
             },
@@ -113,7 +111,7 @@ export const stylesConfig = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '../css/main.css'
+            filename: '../css/[name].css'
         })
     ],
     optimization: {

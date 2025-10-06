@@ -65,8 +65,10 @@ export const email = {
 };
 
 export const stylesPath = {
-    entry: `./${sourceFolder}/${styleFileName}.scss`,
-    dist: `../${assets}/css/`
+    entry: {
+        styles: `./${sourceFolder}/js/${styleFileName}.${scriptExt}`
+    },
+    dist: `../${assets}/js/`
 };
 
 export const webpackPath = {

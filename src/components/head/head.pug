@@ -16,7 +16,7 @@ mixin Head(data)
         each item in concat.css
             link(rel='stylesheet', href=`${staticPath.css}/${item.name}${version}`)&attributes(item.props)
         link(rel='stylesheet', href=`${staticPath.css}/vendor.css${version}`)
-        link(rel='stylesheet', href=`${staticPath.css}/main.css${version}`)
+        link(rel='stylesheet', href=`${staticPath.css}/styles.css${version}`)
     link(rel="apple-touch-icon" sizes="57x57" href=`${staticPath.img}/favicons/apple-icon-57x57.png`)
     link(rel='apple-touch-icon', sizes='180x180', href=`${staticPath.img}/favicons/apple-touch-icon.png`)
     link(rel='icon', type='image/png', sizes='32x32', href=`${staticPath.img}/favicons/favicon-32x32.png`)

@@ -1,7 +1,6 @@
-@use "../plugins/sprite" as *;
-@use "../plugins/sprite-mixin" as *;
+@use '../plugins/sprite-mixin' as sprite;
 
-$generate-sprites: false;
+$generate-sprites: true;
 
 [class^="icon"] {
     display: inline-block;
@@ -21,8 +20,10 @@ $generate-sprites: false;
         &::before {
             content: "";
             display: block;
+            background-size: contain!important;
+            background-repeat: no-repeat;
         }
     }
 
-    @include retina-sprites($retina-groups);
+    @include sprite.retina-sprites(sprite.$retina-groups);
 }

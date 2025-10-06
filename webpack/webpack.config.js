@@ -60,6 +60,22 @@ const rules = [
                 }
             }
         ]
+    },
+    {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: '../img/[name][ext]',
+            publicPath: ''
+        }
+    },
+    {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: '../fonts/[name][ext]',
+            publicPath: ''
+        }
     }
 ];
 

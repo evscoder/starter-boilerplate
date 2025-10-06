@@ -77,8 +77,8 @@ export const scriptsPath = {
 
 export const imagesPath = {
     src: `${sourceFolder}/assets/${imageFolderName}`,
-    spriteSrc: `${sourceFolder}/assets/${imageFolderName}/content/sprite`,
-    spriteStylesDist: `${sourceFolder}/styles/include/plugins`,
+    spriteSrc: `${sourceFolder}/assets/${imageFolderName}/sprite`,
+    spriteStylesDist: `${sourceFolder}/styles/plugins`,
     svgSrc: `${sourceFolder}/assets/${imageFolderName}/svg`,
     dist: `${assets}/${imageFolderName}/`
 };

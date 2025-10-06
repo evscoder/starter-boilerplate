@@ -20,8 +20,6 @@ $generate-sprites: true;
         &::before {
             content: "";
             display: block;
-            background-size: contain!important;
-            background-repeat: no-repeat;
         }
     }
 

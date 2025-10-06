@@ -4,11 +4,11 @@
 $retina-groups: sprite.$retina-groups;
 
 @mixin sprite-image($sprite) {
-    background-image: url("./assets/img/sprite/sprite.png");
+    background-image: url("./assets/img/sprite.png");
 }
 
 @mixin sprite-image2x($sprite) {
-    background-image: url("./assets/img/sprite/sprite@2x.png");
+    background-image: url("./assets/img/sprite@2x.png");
 }
 
 @mixin sprite-width($sprite) {
@@ -27,7 +27,7 @@ $retina-groups: sprite.$retina-groups;
 
 @mixin sprite-image($sprite) {
     $sprite-image: list.nth($sprite, 9);
-    background-image: url(./assets/img/sprite/#{$sprite-image});
+    background-image: url(./assets/img/#{$sprite-image});
 }
 
 @mixin sprite($sprite) {

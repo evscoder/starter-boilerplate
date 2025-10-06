@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
-import WebpackBar from "webpackbar";
+import WebpackBar from 'webpackbar';
 import WebpackShellPluginNext from 'webpack-shell-plugin-next';
 import { argvMode, webpackPath } from '../gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -60,22 +60,6 @@ const rules = [
                 }
             }
         ]
-    },
-    {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-            filename: '../img/[name][ext]',
-            publicPath: ''
-        }
-    },
-    {
-        test: /\.(woff2?|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-            filename: '../fonts/[name][ext]',
-            publicPath: ''
-        }
     }
 ];
 
@@ -110,10 +94,15 @@ if (argvMode.sourcemaps) {
     devtool = 'source-map';
 }
 
+console.log(devtool);
+
 const webpackConfig = {
     mode: production ? 'production' : 'development',
     devtool,
     entry: webpackPath.entry,
+    performance: {
+        hints: false
+    },
     stats: {
         all: false,
         errors: true,

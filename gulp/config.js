@@ -12,6 +12,7 @@ export const {
     developer,
     assets,
     FOLDER_BUILD: production,
+    styleFileName,
     imageFolderName
 } = argvMode;
 
@@ -61,6 +62,11 @@ export const email = {
     src: `${sourceFolder}/emails`,
     filesSrc: `${sourceFolder}/emails/[^_]*.mjml`,
     dist: `${assets}/emails/`
+};
+
+export const stylesPath = {
+    entry: `./${sourceFolder}/${styleFileName}.scss`,
+    dist: `../${assets}/css/`
 };
 
 export const webpackPath = {

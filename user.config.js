@@ -12,6 +12,7 @@ const env = {
     sourceFolder: 'src',
     developer: 'dev',
     assets: 'dev/assets',
+    styleFileName: 'styles',
     imageFolderName: 'img',
     templatePreproc: 'pug', // @String = 'pug' | 'nunjucks'
     templateLocals: {

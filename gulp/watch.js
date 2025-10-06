@@ -36,7 +36,6 @@ const serveWatch = () => {
 
     watch(watchPath.templates, { delay: 0 }, series(
         HTML.templates(),
-        Scripts.run,
         reload
     )).on('all', (event, file) => {
         if (event === 'unlink') {
@@ -48,7 +47,7 @@ const serveWatch = () => {
 
     watch(watchPath.data, HTML.data());
     watch(watchPath.email, HTML.emails());
-    watch(watchPath.css, series(Scripts.run, reload));
+    watch(watchPath.css, series(Scripts.styles, reload));
     watch(watchPath.js.src, series(Scripts.run, reload));
 
     watch(watchPath.js.vendor, series(Copy.scriptsCopy, reload))

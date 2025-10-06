@@ -14,6 +14,7 @@ task('default', series(
     IMAGES.tasks(),
     parallel(
         HTML.tasks(),
+        Scripts.styles,
         Scripts.run
     ),
     serveWatch
@@ -25,6 +26,7 @@ task('build', series(
     IMAGES.tasks(),
     parallel(
         HTML.tasks(),
+        Scripts.styles,
         Scripts.run
     ),
     Clean.cleanBuild,

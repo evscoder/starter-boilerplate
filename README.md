@@ -2,7 +2,7 @@
 <a href="rules/en.md">General rules and Documentation</a> / <a href="rules/ru.md">Общие правила и документация</a>
 </p>
 
-<p style="align-text: center">
+<p style="text-align: center">
     <img width="200" height="auto" src="src/assets/img/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center"> <h1 style="font-weight: bold; display: inline-block; vertical-align: middle;">Fe Starter Bricks</h1>
 </p>
 

@@ -1,4 +1,5 @@
-import '../declare-styles.js';
+// import 'normalize-css/normalize.css';
+// import 'animate.css';
 
 import {
     isMobilePlatform,

@@ -4,9 +4,10 @@ import { $, notifyErr } from './helper.js';
 import { stylesConfig } from '../webpack/webpack.styles.config.js';
 import { webpackConfig } from '../webpack/webpack.config.js';
 const { src, dest } = gulp;
-const { entry } = config.webpackPath;
+const { entry: stylesEntry } = config.stylesPath;
+const { entry: scriptsEntry } = config.webpackPath;
 
-const getEntryPaths = () => {
+const getEntryPaths = (entry) => {
     const entryPaths = [];
 
     Object.entries(entry).forEach(([, value]) => entryPaths.push(value));
@@ -16,14 +17,14 @@ const getEntryPaths = () => {
 
 export default class Scripts {
     static styles() {
-        return src(getEntryPaths())
+        return src(getEntryPaths(stylesEntry))
             .pipe($.plumber(notifyErr()))
             .pipe($.webpackStream(stylesConfig))
             .pipe(dest(stylesConfig.output.path));
     }
 
     static run() {
-        return src(getEntryPaths())
+        return src(getEntryPaths(scriptsEntry))
             .pipe($.plumber(notifyErr()))
             .pipe($.webpackStream(webpackConfig))
             .pipe(dest(webpackConfig.output.path));

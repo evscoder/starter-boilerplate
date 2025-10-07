@@ -54,6 +54,7 @@ src/                        # Root project folder
 │   ├── fn/                 # Utility functions
 │   ├── api/                # API integrations
 │   ├── vendor/             # Third-party libraries
+│   └── styles.js           # JavaScript entry point for Main SCSS file and plugins styles
 │   └── main.js             # Main JavaScript entry point
 │
 ├── pages/                  # Project pages
@@ -64,9 +65,7 @@ src/                        # Root project folder
 │   └── include/            # SCSS partials
 │   └── plugins/            # SCSS plugins           
 │
-├── declare-styles.js       # Global style declarations/generator
 ├── styles.scss             # Main SCSS file
-└── tailwind.css            # Tailwind CSS entry file
 ```
 
 #### General development instructions.

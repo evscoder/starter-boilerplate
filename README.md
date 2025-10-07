@@ -2,7 +2,9 @@
 <a href="rules/en.md">General rules and Documentation</a> / <a href="rules/ru.md">Общие правила и документация</a>
 </p>
 
-<img width="200" height="auto" src="src/assets/img/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center">
+<p style="align-text: center">
+    <img width="200" height="auto" src="src/assets/img/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center"> <h1 style="font-weight: bold; display: inline-block; vertical-align: middle;">Fe Starter Bricks</h1>
+</p>
 
 Модульный конструктор для фронтенд-разработки на основе Gulp 4 и Webpack 5, включающий инструменты:
 - Шаблонизаторы Pug, Nunjucks, MJML, JSON.

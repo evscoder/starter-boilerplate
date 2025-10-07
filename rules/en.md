@@ -2,7 +2,9 @@
     <a href="../README.md">Back to Readme</a>
 </p>
 
-<img width="200" height="auto" src="../src/assets/img/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center">
+<p style="text-align: center">
+    <img width="200" height="auto" src="src/assets/img/Logo.svg" title="Starter Boilerplate" alt="Starter Boilerplate" align="center"> <h1 style="font-weight: bold; display: inline-block; vertical-align: middle;">Fe Starter Bricks</h1>
+</p>
 
 A modular builder for frontend development based on Gulp 4 and Webpack 5, including tools:
 - Template engines: Pug, Nunjucks, MJML, JSON.

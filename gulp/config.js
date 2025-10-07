@@ -105,7 +105,7 @@ export const watchPath = {
         `!${sourceFolder}/components/**/${templateDataFileName}`
     ],
     email: `${sourceFolder}/emails/**/*.mjml`,
-    css: `${sourceFolder}/{styles,components}/**/*.scss`,
+    css: `${sourceFolder}/**/*.scss`,
     js: {
         src: [
             `${sourceFolder}/**/*.${scriptExt}`,

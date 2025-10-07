@@ -2,20 +2,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import { argvMode, stylesPath, webpackPath } from '../gulp/config.js';
+import { argvMode, stylesPath } from '../gulp/config.js';
+import { envSettings } from './webpack.config.js';
 const { production } = argvMode.env;
-
 const dirname = path.dirname(fileURLToPath(import.meta.url));
-const sourceMap = argvMode.sourcemaps ? true : !production;
-let devtool;
-
-if (argvMode.sourcemaps) {
-    devtool = 'source-map';
-} else if (production) {
-    devtool = false;
-} else {
-    devtool = 'source-map';
-}
+const { sourceMap, devtool } = envSettings();
 
 export const stylesConfig = {
     mode: production ? 'production' : 'development',

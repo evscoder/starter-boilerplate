@@ -9,7 +9,22 @@ import { argvMode, webpackPath } from '../gulp/config.js';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const { production } = argvMode.env;
 
-const sourceMap = argvMode.sourcemaps ? true : !production;
+export const envSettings = () => {
+    const sourceMap = argvMode.sourcemaps ? true : !production;
+    let devtool;
+
+    if (argvMode.sourcemaps) {
+        devtool = 'source-map';
+    } else if (production) {
+        devtool = false;
+    } else {
+        devtool = 'source-map';
+    }
+
+    return { sourceMap, devtool };
+};
+
+const { sourceMap, devtool } = envSettings();
 
 const rules = [
     {
@@ -83,18 +98,6 @@ if (argvMode.typeScript) {
         ]
     });
 }
-
-let devtool;
-
-if (argvMode.sourcemaps) {
-    devtool = 'source-map';
-} else if (production) {
-    devtool = false;
-} else {
-    devtool = 'source-map';
-}
-
-console.log(devtool);
 
 const webpackConfig = {
     mode: production ? 'production' : 'development',

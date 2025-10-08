@@ -9,7 +9,7 @@
 A modular builder for frontend development based on Gulp 4 and Webpack 5, including tools:
 - Template engines: Pug, Nunjucks, MJML, JSON.
 - Emitty plugin for incremental template building.
-- Scss preprocessor.
+- Scss preprocessor, Tailwind CSS.
 - Build system with Gulp 4 and Webpack 5.
 - Support for pure ESM packages or ES modules.
 - Support for JavaScript with ES6 and Next syntax or TypeScript Next.
